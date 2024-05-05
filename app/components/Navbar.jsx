@@ -2,7 +2,7 @@
 //images
 import Image from "next/image";
 import { useState } from "react";
-import Dropdown from "./Dropdown";
+import Dropdown from "./DropDown";
 export default function Navbar() {
   const [dropd, setDropD] = useState(false);
   const handleClick = () => {

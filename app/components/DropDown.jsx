@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Dropdown() {
+export default function DropDown() {
   return (
     <ul className="flex flex-col items-center justify-center my-5">
       <a href="https://t.co/d4CmmseoA1">
