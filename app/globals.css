@@ -1,33 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes wiggle {
+  0% {
+    transform: rotate(-3deg);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .animate-wiggle {
+    animation: wiggle 1s infinite;
   }
+}
+.circle-container {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+}
+
+.circle-container:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translate(100px) rotate(0deg);
+}
+.circle-container:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(60deg) translate(100px) rotate(-60deg);
+}
+.circle-container:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(120deg) translate(100px)
+    rotate(-120deg);
+}
+.circle-container:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(180deg) translate(100px)
+    rotate(-180deg);
+}
+.circle-container:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(240deg) translate(100px)
+    rotate(-240deg);
+}
+.circle-container:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(300deg) translate(100px)
+    rotate(-300deg);
 }
